@@ -15,12 +15,12 @@ public class BlogController {
 
     @Autowired
     BlogService blogService;
-    @PostMapping
+    @PostMapping()
     public ResponseEntity createBlog(@RequestParam Integer userId ,
                                      @RequestParam String title,
                                      @RequestParam String content) {
         // Create a blog and add it under given user
-        Blog blog = blogService.createAndReturnBlog(userId,title,content);
+        blogService.createAndReturnBlog(userId,title,content);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
