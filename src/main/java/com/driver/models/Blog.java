@@ -21,10 +21,11 @@ public class Blog{
     public Blog() {
     }
 
-    public Blog(String title, String content, Date pubdate) {
+    public Blog(String title, String content, Date pubdate,User user) {
         this.title = title;
         this.content = content;
         this.pubdate = pubdate;
+        this.user= user;
 
     }
 

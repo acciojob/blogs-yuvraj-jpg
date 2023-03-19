@@ -19,8 +19,8 @@ public class ImageService {
         //add an image to the blog
         Blog blog = blogRepository2.findById(blogId).get();
         Image image = new Image(description,dimensions,blog);
-        blogRepository2.save(blog);
         blog.getImageList().add(image);
+        blogRepository2.save(blog);
         return image;
     }
     public void deleteImage(Integer id){
