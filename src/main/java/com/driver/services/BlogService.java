@@ -1,7 +1,7 @@
 package com.driver.services;
 
-import com.driver.Entity.Blog;
-import com.driver.Entity.User;
+import com.driver.models.Blog;
+import com.driver.models.User;
 import com.driver.repositories.BlogRepository;
 import com.driver.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

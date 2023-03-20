@@ -1,6 +1,6 @@
 package com.driver.services;
 
-import com.driver.Entity.*;
+import com.driver.models.*;
 import com.driver.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ public class ImageService {
         return image;
     }
     public void deleteImage(Integer id){
-        blogRepository2.deleteById(id);
+        imageRepository2.deleteById(id);
     }
 
     public int countImagesInScreen(Integer id, String screenDimensions) {
