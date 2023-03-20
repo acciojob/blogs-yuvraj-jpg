@@ -55,7 +55,7 @@ public class Blog{
         this.content = content;
     }
 
-    public Date getpubDate() {
+    public Date getPubDate() {
         return pubDate;
     }
 
