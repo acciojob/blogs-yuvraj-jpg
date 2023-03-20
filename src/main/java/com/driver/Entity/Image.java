@@ -1,4 +1,4 @@
-package com.driver.models;
+package com.driver.Entity;
 import javax.persistence.*;
 @Entity
 public class Image{

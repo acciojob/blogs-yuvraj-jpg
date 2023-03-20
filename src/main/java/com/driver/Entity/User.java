@@ -1,4 +1,4 @@
-package com.driver.models;
+package com.driver.Entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,6 +15,9 @@ public class User{
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     List<Blog> blogList = new ArrayList<>();
+
+    public User() {
+    }
 
     public User(String username, String password, String firstName, String lastName) {
         this.username = username;

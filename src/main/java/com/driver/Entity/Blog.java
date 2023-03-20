@@ -1,4 +1,4 @@
-package com.driver.models;
+package com.driver.Entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
