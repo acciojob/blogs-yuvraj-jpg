@@ -1,8 +1,10 @@
 package com.driver.models;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 @Entity
 public class Blog{
     @Id
@@ -10,7 +12,8 @@ public class Blog{
     private int id;
     private String title;
     private String content;
-    private Date pubdate;
+    private Date pubDate;
+
     @ManyToOne
     @JoinColumn
     User user;
@@ -21,12 +24,11 @@ public class Blog{
     public Blog() {
     }
 
-    public Blog(String title, String content, Date pubdate,User user) {
+    public Blog(String title, String content, Date pubDate, User user) {
         this.title = title;
         this.content = content;
-        this.pubdate = pubdate;
-        this.user= user;
-
+        this.pubDate = pubDate;
+        this.user = user;
     }
 
     public int getId() {
@@ -53,12 +55,12 @@ public class Blog{
         this.content = content;
     }
 
-    public Date getPubdate() {
-        return pubdate;
+    public Date getPubDate() {
+        return pubDate;
     }
 
-    public void setPubdate(Date pubdate) {
-        this.pubdate = pubdate;
+    public void setPubDate(Date pubDate) {
+        this.pubDate = pubDate;
     }
 
     public User getUser() {

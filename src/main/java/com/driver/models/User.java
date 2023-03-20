@@ -1,8 +1,8 @@
 package com.driver.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 @Entity
 public class User{
     @Id

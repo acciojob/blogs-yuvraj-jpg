@@ -34,9 +34,9 @@ public class ImageService {
         int y = Integer.parseInt(screenDimensions.substring(a));
          //find
         Image image = imageRepository2.findById(id).get();
-        int b = image.getDimension().indexOf('X');
-        int x1 = Integer.parseInt(image.getDimension().substring(0,b));
-        int y1 = Integer.parseInt(image.getDimension().substring(b));
+        int b = image.getDimensions().indexOf('X');
+        int x1 = Integer.parseInt(image.getDimensions().substring(0,b));
+        int y1 = Integer.parseInt(image.getDimensions().substring(b));
 
         c = (x*y)/(x1*y1);
 
