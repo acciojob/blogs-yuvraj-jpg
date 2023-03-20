@@ -27,19 +27,20 @@ public class ImageService {
 
     public int countImagesInScreen(Integer id, String screenDimensions) {
         //Find the number of images of given dimensions that can fit in a screen having `screenDimensions`
-        int c=0;
-        /// given
-        int a = screenDimensions.indexOf('X');
-        int x = Integer.parseInt(screenDimensions.substring(0,a));
-        int y = Integer.parseInt(screenDimensions.substring(a));
-         //find
-        Image image = imageRepository2.findById(id).get();
-        int b = image.getDimensions().indexOf('X');
-        int x1 = Integer.parseInt(image.getDimensions().substring(0,b));
-        int y1 = Integer.parseInt(image.getDimensions().substring(b));
+        int indOfX=screenDimensions.indexOf('X');
+        // find the left(length & right(breadth) character around 'X' and convert this into integer
+        int screenH=Integer.parseInt(screenDimensions.substring(0,indOfX));
+        int screenW=Integer.parseInt(screenDimensions.substring(indOfX+1));
 
-        c = (x*y)/(x1*y1);
+        //find the image that is to be set in the given dimension(screenDimensions)
+        Image image=imageRepository2.findById(id).get();
 
-        return c;
+        //image is found , extract its wdith and height
+        int indxOfXinImage=image.getDimensions().indexOf('X');
+
+        int imageH=Integer.parseInt(image.getDimensions().substring(0,indxOfXinImage));
+        int imageW=Integer.parseInt(image.getDimensions().substring(indxOfXinImage+1));
+
+        return (screenH/imageH) * (screenW/imageW); //num of complete images that fit in the screen of given dimensions
     }
 }
